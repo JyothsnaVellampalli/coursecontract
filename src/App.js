@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import CourseCard from './components/CourseCard';
+import {useCourseContext} from './courseContext';
 
 function App() {
+
+  const {courses, loading, addCourse, deleteCourse} = useCourseContext();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!loading && courses?.length ? (
+        <div className='courses-container'>
+          {courses.map((course) => 
+            <CourseCard course={course} deleteCourse={deleteCourse} />
+          )}
+        </div>
+      ) : <></>}
     </div>
   );
 }

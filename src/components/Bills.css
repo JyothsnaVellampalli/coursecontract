@@ -1,0 +1,26 @@
+.bills-container {
+    padding: 30px;
+}
+
+h2 {
+    padding: 30px;
+}
+
+.bills-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 2px solid gray;
+    padding: 10px 0px;
+}
+
+.row-element {
+    padding: 0px 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+} 
